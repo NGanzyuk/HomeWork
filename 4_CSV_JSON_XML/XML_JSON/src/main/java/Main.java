@@ -27,8 +27,8 @@ public class Main {
                 if (Node.ELEMENT_NODE == nodeElem.getNodeType()){
                     Element element = (Element) nodeElem;
                     Employee employee = new Employee(Integer.parseInt(element.getElementsByTagName("id").item(0).getTextContent()),
-                            element.getElementsByTagName("firstName").item(1).getTextContent(), element.getElementsByTagName("lastName").item(2).getTextContent(),
-                            element.getElementsByTagName("country").item(3).getTextContent(), Integer.parseInt(element.getElementsByTagName("age").item(4).getTextContent()));
+                            element.getElementsByTagName("firstName").item(0).getTextContent(), element.getElementsByTagName("lastName").item(0).getTextContent(),
+                            element.getElementsByTagName("country").item(0).getTextContent(), Integer.parseInt(element.getElementsByTagName("age").item(0).getTextContent()));
                     employeeList.add(employee);
                 }
             }
