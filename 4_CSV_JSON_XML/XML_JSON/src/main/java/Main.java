@@ -20,18 +20,15 @@ public class Main {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(new File(fileName));
-            /*Пришлось преобразовать оригинальный XML файл, потому что вместо атрибутов и значений
-             возвращался null. Я не понимаю с чем это связано, прошу Вас, пожалуйста,
-             при проверке прокомментировать почему это происходит. Оригинальный xml лежит в файле data1.xml.*/
             Node node = doc.getDocumentElement();
             NodeList nodeList = node.getChildNodes();
             for (int i = 0; i < nodeList.getLength(); i++) {
                 Node nodeElem = nodeList.item(i);
                 if (Node.ELEMENT_NODE == nodeElem.getNodeType()){
                     Element element = (Element) nodeElem;
-                    Employee employee = new Employee(Integer.parseInt(element.getAttribute("id")),
-                            element.getAttribute("firstName"), element.getAttribute("lastName"),
-                            element.getAttribute("country"), Integer.parseInt(element.getAttribute("age")));
+                    Employee employee = new Employee(Integer.parseInt(element.getElementsByTagName("id").item(0).getTextContent()),
+                            element.getElementsByTagName("firstName").item(1).getTextContent(), element.getElementsByTagName("lastName").item(2).getTextContent(),
+                            element.getElementsByTagName("country").item(3).getTextContent(), Integer.parseInt(element.getElementsByTagName("age").item(4).getTextContent()));
                     employeeList.add(employee);
                 }
             }

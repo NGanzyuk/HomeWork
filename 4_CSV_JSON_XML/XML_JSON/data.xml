@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <staff>
-    <employee id="1" firstName="John" lastName="Smith" country="USA" age="25"/>
-    <employee id="2" firstName="Ivan" lastName="Petrov" country="RU" age="23"/>
+    <employee>
+        <id>1</id>
+        <firstName>John</firstName>
+        <lastName>Smith</lastName>
+        <country>USA</country>
+        <age>25</age>
+    </employee>
+    <employee>
+        <id>2</id>
+        <firstName>Ivan</firstName>
+        <lastName>Petrov</lastName>
+        <country>RU</country>
+        <age>23</age>
+    </employee>
 </staff>
