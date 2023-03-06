@@ -48,7 +48,7 @@ public class Main {
     }
 
     public static void writeString(String str){
-        try(FileWriter file = new FileWriter("data.json")) {
+        try(FileWriter file = new FileWriter("4_CSV_JSON_XML/XML_JSON/data.json")) {
             file.write(str);
             file.flush();
         } catch (IOException e) {
@@ -57,7 +57,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String fileName = "data.xml";
+        String fileName = "4_CSV_JSON_XML/XML_JSON/data.xml";
         parseXML(fileName);
     }
 }

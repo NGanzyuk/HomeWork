@@ -44,7 +44,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String json = readString("data.json");
+        String json = readString("4_CSV_JSON_XML/ParseJson/data.json");
         ArrayList<Employee> employeeList = jsonToList(json);
         for (Employee e: employeeList) {
             System.out.println(e.toString());
