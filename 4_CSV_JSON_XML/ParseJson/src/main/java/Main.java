@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static String readString (String file){
@@ -45,7 +46,8 @@ public class Main {
 
     public static void main(String[] args) {
         String json = readString("4_CSV_JSON_XML/ParseJson/data.json");
-        ArrayList<Employee> employeeList = jsonToList(json);
+        System.out.println(json);
+        List<Employee> employeeList = jsonToList(json);
         for (Employee e: employeeList) {
             System.out.println(e.toString());
         }
