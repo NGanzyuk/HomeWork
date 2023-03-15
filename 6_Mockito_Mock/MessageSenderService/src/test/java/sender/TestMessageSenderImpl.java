@@ -50,13 +50,14 @@ public class TestMessageSenderImpl {
     public void testSendENText(){
         final String expected = "Welcome";
         LocalizationServiceImpl localizationServiceImpl = Mockito.mock(LocalizationServiceImpl.class);
+        Mockito.when(localizationServiceImpl.locale(Country.USA)).thenReturn("Welcome");
         GeoServiceImpl geoService = Mockito.mock(GeoServiceImpl.class);
         Mockito.when(geoService.byIp("96.45.183.149")).thenReturn(
                 new Location("New York", Country.USA, null,  0));
         MessageSenderImpl messageSender = new MessageSenderImpl(geoService, localizationServiceImpl);
         Map<String, String> headers = new HashMap<String, String>();
         headers.put(MessageSenderImpl.IP_ADDRESS_HEADER, "96.45.183.149");
-        final String result = messageSender.send(headers);// почему-то возвращает null хотя функция правильная вызывается
+        final String result = messageSender.send(headers);
         Assertions.assertEquals(expected, result);
 
     }
